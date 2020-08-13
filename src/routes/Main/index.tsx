@@ -11,13 +11,9 @@ import {
   CHOOSE_LOGIN,
   STATISTICS,
 } from '../../constants/path';
-import {
-  Initial,
-  Loading,
-  Home,
-  ChooseLogin,
-  Statistics,
-} from '../../components/pages';
+import {Initial, Loading, ChooseLogin} from '../../components/pages';
+import Home from './Home';
+import Statistics from './Statistics';
 import * as UiContext from '../../contexts/ui';
 
 const Stack = createStackNavigator();
@@ -28,7 +24,7 @@ const forFade = ({current}: StackCardInterpolationProps) => ({
     opacity: current.progress,
   },
 });
-
+// TabBarController
 function TabRoutes() {
   return (
     <Tab.Navigator initialRouteName={HOME}>
@@ -38,6 +34,7 @@ function TabRoutes() {
   );
 }
 
+// ボタンを押すと画面遷移する
 function switchingAuthStatus(status: UiContext.Status) {
   switch (status) {
     case UiContext.Status.UN_AUTHORIZED:
