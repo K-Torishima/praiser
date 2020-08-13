@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ChooseLogin() {
+export default function Loading() {
   return (
     <View style={styles.container}>
-      <Text>ChooseLogin</Text>
+      <Text>Loading</Text>
     </View>
   );
 }
