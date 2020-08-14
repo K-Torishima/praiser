@@ -12,14 +12,16 @@ import {
   CHOOSE_LOGIN,
   STATISTICS,
   USER_INFO,
+  INPUT,
 } from '../../constants/path';
-import {Initial, Loading, ChooseLogin} from '../../components/pages';
+import {Initial, Loading, ChooseLogin, Input} from '../../components/pages';
 import Home from './Home';
 import Statistics from './Statistics';
 import UserInfo from './UserInfo';
 import * as UiContext from '../../contexts/ui';
 
 const Stack = createStackNavigator();
+const ModalStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const HomeDrawer = createDrawerNavigator();
 const StatisticsDrawer = createDrawerNavigator();
@@ -76,13 +78,21 @@ function TabRoutes() {
   );
 }
 
+function TabWithModalRputes() {
+  return (
+    <ModalStack.Navigator mode="modal" headerMode="none">
+      <Stack.Screen name={HOME} component={TabRoutes} />
+      <Stack.Screen name={INPUT} component={Input} />
+    </ModalStack.Navigator>
+  );
+}
 // ボタンを押すと画面遷移する
 function switchingAuthStatus(status: UiContext.Status) {
   switch (status) {
     case UiContext.Status.UN_AUTHORIZED:
       return <Stack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} />;
     case UiContext.Status.AUTHORIZED:
-      return <Stack.Screen name={HOME} component={TabRoutes} />;
+      return <Stack.Screen name={HOME} component={TabWithModalRputes} />;
     case UiContext.Status.FIRST_OPEN:
     default:
       return <Stack.Screen name={INITIAL} component={Initial} />;
