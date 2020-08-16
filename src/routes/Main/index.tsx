@@ -28,6 +28,8 @@ import Home from './Home';
 import Statistics from './Statistics';
 import UserInfo from './UserInfo';
 import * as UiContext from '../../contexts/ui';
+import {COLOR} from '../../constants/theme';
+import {headerStyle, headerTintColor} from '../Header';
 
 const Stack = createStackNavigator();
 const ModalStack = createStackNavigator();
@@ -51,6 +53,10 @@ const getActiveRouteName = (state: any): string => {
     return getActiveRouteName(route.state);
   }
   return route.name;
+};
+
+const cardStyle = {
+  backgroundColor: COLOR.MAIN,
 };
 
 function HomeWithDrawer() {
@@ -90,7 +96,7 @@ function TabRoutes() {
 
 function TabWithModalRputes() {
   return (
-    <ModalStack.Navigator mode="modal" headerMode="none">
+    <ModalStack.Navigator mode="modal" headerMode="none" screenOptions={{cardStyle}}>
       <Stack.Screen name={HOME} component={TabRoutes} />
       <Stack.Screen name={INPUT} component={Input} />
     </ModalStack.Navigator>
@@ -99,10 +105,12 @@ function TabWithModalRputes() {
 
 function ChooseLoginNavigator() {
   return (
-    <ChooseLoginStack.Navigator initialRouteName={CHOOSE_LOGIN}>
-      <ModalStack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} />
-      <ModalStack.Screen name={SIGN_IN} component={SignIn} />
-      <ModalStack.Screen name={SIGN_UP} component={SignUp} />
+    <ChooseLoginStack.Navigator 
+    initialRouteName={CHOOSE_LOGIN}
+    screenOptions={{cardStyle, headerStyle, headerTintColor}}>
+      <ModalStack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} options={{title: 'Choose Login'}}/>
+      <ModalStack.Screen name={SIGN_IN} component={SignIn} options={{title: 'Sign In'}}/>
+      <ModalStack.Screen name={SIGN_UP} component={SignUp} options={{title: 'Sign Up'}}/>
     </ChooseLoginStack.Navigator>
   );
 }
