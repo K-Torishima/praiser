@@ -12,22 +12,21 @@ const cardStyle = {
 
 function HomeNavigator() {
   return (
-    <Stack.Navigator 
-    initialRouteName={HOME}
-    screenOptions={{cardStyle, headerStyle, headerTintColor}}>
+    <Stack.Navigator
+      initialRouteName={HOME}
+      screenOptions={{cardStyle, headerStyle, headerTintColor}}>
       <Stack.Screen
         name={HOME}
         component={Home}
-        options={{headerLeft: () => <HeaderLeft />,
-           title: 'Home'
-          }}
+        options={{headerLeft: () => <HeaderLeft />, title: 'Home'}}
       />
       <Stack.Screen
-      name={DETAIL}
-      component={Detail}
-      options={{
-        title: 'Details'
-      }} />
+        name={DETAIL}
+        component={Detail}
+        options={{
+          title: 'Details',
+        }}
+      />
     </Stack.Navigator>
   );
 }
