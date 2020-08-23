@@ -59,9 +59,22 @@ const cardStyle = {
   backgroundColor: COLOR.MAIN,
 };
 
+const drawerStyle = {
+  backgroundColor: COLOR.MAIN,
+};
+
+const drawerContentOptions = {
+  activeTintColor: COLOR.PRIMARY,
+  inactiveTintColor: COLOR.WHITE,
+};
+
+
 function HomeWithDrawer() {
   return (
-    <HomeDrawer.Navigator initialRouteName={HOME}>
+    <HomeDrawer.Navigator 
+    initialRouteName={HOME} 
+    drawerStyle={drawerStyle}
+    drawerContentOptions={drawerContentOptions}>
       <HomeDrawer.Screen name={HOME} component={Home} />
       <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
     </HomeDrawer.Navigator>
@@ -70,7 +83,11 @@ function HomeWithDrawer() {
 
 function StatisticsWithDrawer() {
   return (
-    <StatisticsDrawer.Navigator>
+    <StatisticsDrawer.Navigator
+    initialRouteName={STATISTICS}
+    drawerStyle={drawerStyle}
+    drawerContentOptions={drawerContentOptions}
+    >
       <StatisticsDrawer.Screen name={STATISTICS} component={Statistics} />
       <StatisticsDrawer.Screen name={USER_INFO} component={UserInfo} />
     </StatisticsDrawer.Navigator>
