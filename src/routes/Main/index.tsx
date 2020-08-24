@@ -68,13 +68,12 @@ const drawerContentOptions = {
   inactiveTintColor: COLOR.WHITE,
 };
 
-
 function HomeWithDrawer() {
   return (
-    <HomeDrawer.Navigator 
-    initialRouteName={HOME} 
-    drawerStyle={drawerStyle}
-    drawerContentOptions={drawerContentOptions}>
+    <HomeDrawer.Navigator
+      initialRouteName={HOME}
+      drawerStyle={drawerStyle}
+      drawerContentOptions={drawerContentOptions}>
       <HomeDrawer.Screen name={HOME} component={Home} />
       <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
     </HomeDrawer.Navigator>
@@ -84,10 +83,9 @@ function HomeWithDrawer() {
 function StatisticsWithDrawer() {
   return (
     <StatisticsDrawer.Navigator
-    initialRouteName={STATISTICS}
-    drawerStyle={drawerStyle}
-    drawerContentOptions={drawerContentOptions}
-    >
+      initialRouteName={STATISTICS}
+      drawerStyle={drawerStyle}
+      drawerContentOptions={drawerContentOptions}>
       <StatisticsDrawer.Screen name={STATISTICS} component={Statistics} />
       <StatisticsDrawer.Screen name={USER_INFO} component={UserInfo} />
     </StatisticsDrawer.Navigator>
@@ -120,7 +118,10 @@ function TabRoutes() {
 
 function TabWithModalRputes() {
   return (
-    <ModalStack.Navigator mode="modal" headerMode="none" screenOptions={{cardStyle}}>
+    <ModalStack.Navigator
+      mode="modal"
+      headerMode="none"
+      screenOptions={{cardStyle}}>
       <Stack.Screen name={HOME} component={TabRoutes} />
       <Stack.Screen name={INPUT} component={Input} />
     </ModalStack.Navigator>
@@ -129,12 +130,24 @@ function TabWithModalRputes() {
 
 function ChooseLoginNavigator() {
   return (
-    <ChooseLoginStack.Navigator 
-    initialRouteName={CHOOSE_LOGIN}
-    screenOptions={{cardStyle, headerStyle, headerTintColor}}>
-      <ModalStack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} options={{title: 'Choose Login'}}/>
-      <ModalStack.Screen name={SIGN_IN} component={SignIn} options={{title: 'Sign In'}}/>
-      <ModalStack.Screen name={SIGN_UP} component={SignUp} options={{title: 'Sign Up'}}/>
+    <ChooseLoginStack.Navigator
+      initialRouteName={CHOOSE_LOGIN}
+      screenOptions={{cardStyle, headerStyle, headerTintColor}}>
+      <ModalStack.Screen
+        name={CHOOSE_LOGIN}
+        component={ChooseLogin}
+        options={{title: 'Choose Login'}}
+      />
+      <ModalStack.Screen
+        name={SIGN_IN}
+        component={SignIn}
+        options={{title: 'Sign In'}}
+      />
+      <ModalStack.Screen
+        name={SIGN_UP}
+        component={SignUp}
+        options={{title: 'Sign Up'}}
+      />
     </ChooseLoginStack.Navigator>
   );
 }

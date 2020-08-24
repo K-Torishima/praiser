@@ -13,11 +13,12 @@ const cardStyle = {
 function UserInfoNavigator() {
   return (
     <Stack.Navigator
-    initialRouteName={USER_INFO}
-    screenOptions={{
-      cardStyle, 
-      headerStyle,
-      headerTintColor}}>
+      initialRouteName={USER_INFO}
+      screenOptions={{
+        cardStyle,
+        headerStyle,
+        headerTintColor,
+      }}>
       <Stack.Screen
         name={USER_INFO}
         component={UserInfo}
@@ -31,4 +32,3 @@ function UserInfoNavigator() {
 }
 
 export default UserInfoNavigator;
-
