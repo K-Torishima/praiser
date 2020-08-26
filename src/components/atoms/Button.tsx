@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet, Text, TextStyle, ViewStyle} from 'react-native';
 import {Button as PaperButton} from 'react-native-paper';
 import {COLOR} from '../../constants/theme';
-import {color} from 'react-native-reanimated';
 
 const styles = StyleSheet.create({
   text: {
