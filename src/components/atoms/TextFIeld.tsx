@@ -46,6 +46,7 @@ export default function TextField(props: Props) {
     secureTextEntry,
     disabled,
   } = props;
+
   return (
     <TextInput
       label={label}

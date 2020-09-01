@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, TouchableWithoutFeedback, View} from 'react-native';
 import {Button, TextField, dismiss} from '../../atoms';
-import {useControlledComponent} from '../../lib/hooks';
+import {useControlledComponent} from '../../../lib/hooks';
 import {Context, Status} from '../../../contexts/ui';
 
 const styles = StyleSheet.create({
