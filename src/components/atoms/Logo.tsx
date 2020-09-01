@@ -21,7 +21,7 @@ interface Props {
 }
 
 export default function Logo(props: Props) {
-  const {image, reactImage, style} = props;
+  const {image = reactImage, style} = props;
   return (
     <Image source={image} resizeMode="contain" style={[styles.image, style]} />
   );
