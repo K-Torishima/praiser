@@ -13,8 +13,8 @@ const cardStyle = {
 function StatisticsNavigator() {
   return (
     <Stack.Navigator
-    initialRouteName={STATISTICS}
-    screenOptions={{cardStyle, headerStyle, headerTintColor}}>
+      initialRouteName={STATISTICS}
+      screenOptions={{cardStyle, headerStyle, headerTintColor}}>
       <Stack.Screen
         name={STATISTICS}
         component={Statistics}
@@ -24,11 +24,12 @@ function StatisticsNavigator() {
         }}
       />
       <Stack.Screen
-      name={DETAIL}
-      component={Detail}
-      options={{
-        title: 'Detail'
-        }}/>
+        name={DETAIL}
+        component={Detail}
+        options={{
+          title: 'Detail',
+        }}
+      />
     </Stack.Navigator>
   );
 }
